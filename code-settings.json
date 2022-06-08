@@ -1,0 +1,15 @@
+{
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.lightbulb.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.confirmSync": false,
+    "go.lintOnSave": "off",
+    "go.toolsManagement.autoUpdate": true,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "git.autoRepositoryDetection": false
+}
