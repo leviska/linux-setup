@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 # install git
 sudo pacman -S git
 
@@ -29,9 +31,7 @@ yay -S ttf-meslo-nerd-font-powerlevel10k
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cd ~/
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-echo "You need to change theme in zshrc: ZSH_THEME=\"powerlevel10k/powerlevel10k\""
-read -p "Press enter to continue"
-vim ~/.zshrc
+sed -i -e 's/robbyrussell/powerlevel10k\/powerlevel10k/g' ~/.zshrc
 
 ### Languages
 
@@ -43,3 +43,26 @@ sudo pacman -S go
 
 # python3
 sudo pacman -S python3 
+
+
+### Additional
+
+# clipboard manager
+yay -S clipster roficlip
+echo "clipster -d & disown" >> ~/.profile
+
+### Configs
+
+# wezterm
+mkdir -p ~/.config/wezterm/
+mv wezterm.config ~/.config/wezterm/wezterm.lua
+
+# ssh agent
+mkdir -p ~/.ssh/
+mv ssh.config ~/.ssh/config
+echo "eval $(ssh-agent) > /dev/null" >> ~/.zshrc
+
+# greeter
+# TODO: sed -i -e 's/#greeter-session=.../.../g' /etc/lightdm/lightdm.conf
+
+set +x
