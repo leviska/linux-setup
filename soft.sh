@@ -33,6 +33,12 @@ cd ~/
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sed -i -e 's/robbyrussell/powerlevel10k\/powerlevel10k/g' ~/.zshrc
 
+# docker
+sudo pacman -S docker docker-compose
+
+# misc
+sudo pacman -S qbittorrent
+
 ### Languages
 
 # rust
